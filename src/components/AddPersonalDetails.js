@@ -58,7 +58,7 @@ class AddPersonalDetails extends Component {
     let imgPreview = null;
     imgPreviewURL ? imgPreview = (<img  src={imgPreviewURL} />) : null;
     return (
-      <form onSubmit={this.createProfile}>
+      <form inverted onSubmit={this.createProfile}>
         <input name="avatar" ref={this.imageRef} type="file" accept="image/*" onChange={this.previewImg} />
         <div>{imgPreview}</div>
         <input name="name" ref={this.nameRef} type="text" placeholder="First Name"/>
@@ -72,7 +72,7 @@ class AddPersonalDetails extends Component {
         <input name="city" ref={this.cityRef} type="text" placeholder="City"/>
         <input name="state" ref={this.stateRef} type="text" placeholder="State or Country"/>
         <button type="submit">Add Personal Details</button>
-      </form>
+      </form>   
     );
   }
 }
