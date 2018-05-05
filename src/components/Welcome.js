@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
+import TextField from 'material-ui/TextField';
+import CustomButton from './CustomButton';
 
 class Welcome extends Component {
-
-  myName = React.createRef();
-
+  
   startBuildingResume = e => {
     e.preventDefault();
-    const userName = this.myName.current.value;
+    const userName = e.target.elements[0].value
     this.props.history.push(`/resume/${userName}`)
   }
 
@@ -15,12 +15,11 @@ class Welcome extends Component {
       <Fragment>
         <form onSubmit={this.startBuildingResume}>
         <h2>Please Enter Your Name</h2>
-        <input 
-          type="text"
-          ref={this.myName}
-          required
+        <TextField
           placeholder="Your name"
+          required
         />
+      <CustomButton>Bris</CustomButton>
         <button type="submit">Start Building!</button>
         </form>
       </Fragment>
